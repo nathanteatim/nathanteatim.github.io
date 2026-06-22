@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f7f8f5;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HERO */
+.hero {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #dff5ea, #f7f8f5);
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #2f4f3f;
+}
+
+.subtext {
+  margin-top: 10px;
+  color: #555;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary {
+  background: #2f6f4e;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #2f6f4e;
+  color: #2f6f4e;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 0;
+}
+
+.section.alt {
+  background: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card.highlight {
+  border: 2px solid #2f6f4e;
+}
+
+/* STATUS */
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #2f6f4e;
+}
+
+/* QUOTE */
+.quote {
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
+  margin: 40px 0;
+  color: #2f4f3f;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+  color: #666;
+}
