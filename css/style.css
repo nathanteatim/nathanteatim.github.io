@@ -1,19 +1,15 @@
-/* SAFE RECOVERY BASE - RESTORES LAYOUT */
-
 :root {
   --mint: #38f2c6;
-  --mint-dark: #16c7a2;
   --bg: #0b0f0e;
   --card: rgba(255,255,255,0.06);
   --text: #e9fffb;
-  --muted: rgba(233,255,251,0.7);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -21,13 +17,15 @@ body {
   color: var(--text);
 }
 
-/* HERO SAFE */
 .hero {
   text-align: center;
   padding: 80px 20px 40px;
 }
 
-/* SIMPLE LAYOUT GRID */
+.hero h1 {
+  font-size: 2.5rem;
+}
+
 .hub {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -35,27 +33,24 @@ body {
   padding: 40px 10%;
 }
 
-/* CARDS SAFE */
 .card {
   background: var(--card);
-  border: 1px solid rgba(56,242,198,0.15);
   padding: 20px;
   border-radius: 12px;
   text-align: center;
+  border: 1px solid rgba(56,242,198,0.2);
 }
 
-/* BUTTON SAFE */
 .btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 16px;
+  padding: 10px 15px;
   background: var(--mint);
-  color: #00110d;
+  color: black;
   text-decoration: none;
   border-radius: 8px;
 }
 
-/* SOCIAL SAFE */
 .social {
   text-align: center;
   padding: 30px;
@@ -63,6 +58,6 @@ body {
 
 .social a {
   color: var(--mint);
-  margin: 0 8px;
+  margin: 0 10px;
   text-decoration: none;
 }
