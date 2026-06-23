@@ -1,63 +1,184 @@
 :root {
   --mint: #38f2c6;
-  --bg: #0b0f0e;
+  --mint-dark: #16c7a2;
+  --bg: #070c0b;
   --card: rgba(255,255,255,0.06);
   --text: #e9fffb;
+  --muted: rgba(233,255,251,0.7);
+  --glow: rgba(56,242,198,0.25);
 }
 
+/* =========================
+   BASE SYSTEM
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top, #0f1f1b, var(--bg));
   color: var(--text);
+  overflow-x: hidden;
 }
 
+/* =========================
+   HERO CORE (IDENTITY ENGINE)
+========================= */
 .hero {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 100px 20px 60px;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
+.hero-core {
+  position: relative;
+  z-index: 2;
 }
 
+/* floating glow behind name */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  transform: translate(-50%, -50%);
+  background: var(--mint);
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.18;
+  animation: pulse 6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+  50% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.22; }
+}
+
+.name {
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0 0 25px var(--glow);
+}
+
+.tagline {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* =========================
+   SOCIAL PORTS
+========================= */
+.social-ports {
+  margin-top: 18px;
+}
+
+.social-ports a {
+  margin: 0 10px;
+  color: var(--mint);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.social-ports a:hover {
+  color: white;
+  text-shadow: 0 0 10px var(--mint);
+}
+
+/* =========================
+   HUB GRID SYSTEM
+========================= */
 .hub {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
   padding: 40px 10%;
+  position: relative;
 }
 
+/* =========================
+   CARDS (ECO SYSTEM MODULES)
+========================= */
 .card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(56,242,198,0.2);
+  border: 1px solid rgba(56,242,198,0.15);
+  padding: 26px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn {
+/* glow edge */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, transparent, var(--mint), transparent);
+  opacity: 0.15;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 35px var(--glow);
+  border-color: var(--mint);
+}
+
+/* card text */
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* card links */
+.card a {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: var(--mint);
-  color: black;
-  text-decoration: none;
-  border-radius: 8px;
-}
-
-.social {
-  text-align: center;
-  padding: 30px;
-}
-
-.social a {
+  margin-top: 8px;
   color: var(--mint);
-  margin: 0 10px;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.card a:hover {
+  color: white;
+  text-shadow: 0 0 8px var(--mint);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================
+   MOBILE ADAPTATION
+========================= */
+@media (max-width: 600px) {
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .hub {
+    padding: 30px 6%;
+  }
 }
