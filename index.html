@@ -1,295 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathan Teatim | Digital Front Door</title>
 
-<title>Nathan Teatim | Writer • Electronics Technician • Systems Builder</title>
+  <style>
+    :root {
+      --mint: #38f2c6;
+      --mint-dark: #16c7a2;
+      --bg: #0b0f0e;
+      --card: rgba(255,255,255,0.06);
+      --text: #e9fffb;
+      --muted: rgba(233,255,251,0.7);
+    }
 
-<link rel="stylesheet" href="style.css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    body {
+      background: radial-gradient(circle at top, #0f1a18, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    /* Floating mint blobs */
+    .blob {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: var(--mint);
+      filter: blur(120px);
+      opacity: 0.15;
+      animation: float 12s infinite ease-in-out;
+    }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    .blob:nth-child(1) { top: 10%; left: 10%; }
+    .blob:nth-child(2) { bottom: 10%; right: 15%; animation-delay: 3s; }
+    .blob:nth-child(3) { top: 40%; right: 40%; animation-delay: 6s; }
 
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .hub {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px 10%;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(56,242,198,0.2);
+      padding: 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--mint);
+      box-shadow: 0 10px 30px rgba(56,242,198,0.15);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: var(--mint);
+      color: #00110d;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--mint-dark);
+    }
+
+    .social {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: var(--mint);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
-<header>
-
-<nav>
-
-<h2 class="logo">Nathan Teatim</h2>
-
-<ul>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#books">Books</a></li>
-
-<li><a href="#timeline">Journey</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-text">
-
-<h1>
-Writer.<br>
-Electronics Technician.<br>
-Systems Builder.
-</h1>
-
-<p>
-
-Building ideas, repairing technology, and creating systems that compound over time.
-
-</p>
-
-<div class="buttons">
-
-<a class="btn" href="#books">Explore My Work</a>
-
-<a class="btn secondary" href="#contact">Contact Me</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="images/MINTY_NO_BACKGROUND_3D_YouTube_Watermark.png" alt="Minty">
-
-</div>
-
-</section>
-
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h2>About Me</h2>
-
-<p>
-
-I'm Nathan Teatim, a writer, electronics repair technician and systems thinker.
-
-I have over three years of experience repairing smartphones and laptops while exploring entrepreneurship, technology and long-term wealth creation.
-
-I believe systems outperform motivation and that patience compounds.
-
-</p>
-
-</section>
-
-
-
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<h2>Technical Skills</h2>
-
-<div class="cards">
-
-<div class="card">
-<i class="fa-solid fa-laptop"></i>
-<h3>Laptop Diagnostics</h3>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-mobile-screen"></i>
-<h3>Phone Repair</h3>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-hard-drive"></i>
-<h3>SSD Upgrades</h3>
-</div>
-
-<div class="card">
-<i class="fa-brands fa-windows"></i>
-<h3>Windows Installation</h3>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-shield"></i>
-<h3>Virus Removal</h3>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-database"></i>
-<h3>Data Recovery</h3>
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- BOOKS -->
-
-<section id="books">
-
-<h2>Books</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="images/silent-capital.jpg">
-
-<h3>Silent Capital</h3>
-
-<p>
-Wealth through behavior and systems.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<img src="images/capital-ask.jpg">
-
-<h3>The Capital Ask</h3>
-
-<p>
-Unlocking opportunities.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<img src="images/capital-velocity.jpg">
-
-<h3>Capital Velocity</h3>
-
-<p>
-Accelerating the flow of value.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- TIMELINE -->
-
-<section id="timeline">
-
-<h2>Journey</h2>
-
-<div class="timeline-item">
-
-<h3>2022</h3>
-
-<p>Started repairing smartphones.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h3>2023</h3>
-
-<p>Expanded into laptop diagnostics and upgrades.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h3>2025</h3>
-
-<p>Published Silent Capital.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<h3>Future</h3>
-
-<p>Germany Ausbildung and technical specialization.</p>
-
-</div>
-
-</section>
-
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<div class="socials">
-
-<a href="#">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-facebook"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="#">
-<i class="fa-solid fa-envelope"></i>
-</a>
-
-</div>
-
-</section>
-
-
-
-<footer>
-
-<p>
-
-Built with patience and systems.
-
-</p>
-
-</footer>
-
-<!-- <script src="script.js"></script> -->
+  <!-- Floating background -->
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+
+  <header>
+    <h1>Nathan Teatim</h1>
+    <p class="subtitle">A digital ecosystem of music, writing, engineering & ambition.</p>
+  </header>
+
+  <section class="hub">
+
+    <div class="card">
+      <h2>🧑 Personal Identity</h2>
+      <p>The core story, vision, and evolution of Nathan Teatim.</p>
+      <a class="btn" href="#">Explore</a>
+    </div>
+
+    <div class="card">
+      <h2>🔧 MCXONIC Enterprises</h2>
+      <p>Innovation, engineering systems, and business projects.</p>
+      <a class="btn" href="#">Enter</a>
+    </div>
+
+    <div class="card">
+      <h2>🎵 Maguitar Mcxonic</h2>
+      <p>Music identity, sound experiments, and creative releases.</p>
+      <a class="btn" href="#">Listen</a>
+    </div>
+
+    <div class="card">
+      <h2>📚 Books & Writing</h2>
+      <p>Silent Capital and other narrative or financial works.</p>
+      <a class="btn" href="#">Read</a>
+    </div>
+
+    <div class="card">
+      <h2>💻 Technical Portfolio</h2>
+      <p>Projects, code, systems, and engineering builds.</p>
+      <a class="btn" href="#">View</a>
+    </div>
+
+    <div class="card">
+      <h2>🇩🇪 Germany Journey</h2>
+      <p>Study, migration, and personal expansion into Europe.</p>
+      <a class="btn" href="#">Follow</a>
+    </div>
+
+  </section>
+
+  <section class="social">
+    <h3>Connect With Me</h3>
+    <p>
+      <a href="#">Instagram</a>
+      <a href="#">X (Twitter)</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Nathan Teatim — MCXONIC Digital Ecosystem
+  </footer>
 
 </body>
 </html>
