@@ -231,6 +231,11 @@ color:white;
 
 @media(max-width:900px){
 
+
+.dark{
+background:#111827;
+color:white;
+}
 .hero{
 flex-direction:column;
 text-align:center;
@@ -295,9 +300,4 @@ border-radius:50%;
 background:#1e293b;
 color:white;
 cursor:pointer;
-}
-
-.dark{
-background:#111827;
-color:white;
 }
