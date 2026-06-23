@@ -301,3 +301,26 @@ background:#1e293b;
 color:white;
 cursor:pointer;
 }
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.active{
+color:#53c5a1 !important;
+}
+
+#topBtn{
+position:fixed;
+bottom:30px;
+right:30px;
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:#53c5a1;
+color:white;
+font-size:2rem;
+cursor:pointer;
+display:none;
+}
