@@ -3,85 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nathan Teatim | MCXONIC Ecosystem</title>
+  <title>Nathan Teatim | Digital Front Door</title>
 
-  <!-- CSS will be added in Chapter 2 -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --mint: #38f2c6;
+      --mint-dark: #16c7a2;
+      --bg: #0b0f0e;
+      --card: rgba(255,255,255,0.06);
+      --text: #e9fffb;
+      --muted: rgba(233,255,251,0.7);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0f1a18, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* Floating mint blobs */
+    .blob {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: var(--mint);
+      filter: blur(120px);
+      opacity: 0.15;
+      animation: float 12s infinite ease-in-out;
+    }
+
+    .blob:nth-child(1) { top: 10%; left: 10%; }
+    .blob:nth-child(2) { bottom: 10%; right: 15%; animation-delay: 3s; }
+    .blob:nth-child(3) { top: 40%; right: 40%; animation-delay: 6s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .hub {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px 10%;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(56,242,198,0.2);
+      padding: 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--mint);
+      box-shadow: 0 10px 30px rgba(56,242,198,0.15);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: var(--mint);
+      color: #00110d;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--mint-dark);
+    }
+
+    .social {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      color: var(--mint);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HERO / IDENTITY CORE
-  ========================== -->
-  <header class="hero">
+  <!-- Floating background -->
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
 
-    <div class="hero-core">
-      <h1 class="name">Nathan Teatim</h1>
-      <p class="tagline">
-        MCXONIC Ecosystem • Music • Writing • Engineering • Expansion
-      </p>
-
-      <!-- social "ports" -->
-      <nav class="social-ports">
-        <a href="#" target="_blank">Instagram</a>
-        <a href="#" target="_blank">YouTube</a>
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">LinkedIn</a>
-      </nav>
-    </div>
-
+  <header>
+    <h1>Nathan Teatim</h1>
+    <p class="subtitle">A digital ecosystem of music, writing, engineering & ambition.</p>
   </header>
 
+  <section class="hub">
 
-  <!-- =========================
-       MAIN ECOSYSTEM HUB
-  ========================== -->
-  <main class="hub">
+    <div class="card">
+      <h2>🧑 Personal Identity</h2>
+      <p>The core story, vision, and evolution of Nathan Teatim.</p>
+      <a class="btn" href="#">Explore</a>
+    </div>
 
-    <!-- MCXONIC -->
-    <section class="card" id="mcxonic">
+    <div class="card">
       <h2>🔧 MCXONIC Enterprises</h2>
-      <p>Engineering systems, business architecture, and digital infrastructure.</p>
-      <a href="#">Enter System</a>
-    </section>
+      <p>Innovation, engineering systems, and business projects.</p>
+      <a class="btn" href="#">Enter</a>
+    </div>
 
-    <!-- MUSIC -->
-    <section class="card" id="music">
+    <div class="card">
       <h2>🎵 Maguitar Mcxonic</h2>
-      <p>Sound identity, creative experiments, and music evolution.</p>
-      <a href="#">Listen</a>
-    </section>
+      <p>Music identity, sound experiments, and creative releases.</p>
+      <a class="btn" href="#">Listen</a>
+    </div>
 
-    <!-- BOOKS -->
-    <section class="card" id="books">
+    <div class="card">
       <h2>📚 Books & Writing</h2>
-      <p>Silent Capital and future writing systems.</p>
-      <a href="#">Read Works</a>
-    </section>
+      <p>Silent Capital and other narrative or financial works.</p>
+      <a class="btn" href="#">Read</a>
+    </div>
 
-    <!-- PORTFOLIO -->
-    <section class="card" id="portfolio">
+    <div class="card">
       <h2>💻 Technical Portfolio</h2>
-      <p>Projects, code systems, and engineering builds.</p>
-      <a href="#">View Work</a>
-    </section>
+      <p>Projects, code, systems, and engineering builds.</p>
+      <a class="btn" href="#">View</a>
+    </div>
 
-    <!-- GERMANY -->
-    <section class="card" id="germany">
+    <div class="card">
       <h2>🇩🇪 Germany Journey</h2>
-      <p>Study path, migration story, and expansion roadmap.</p>
-      <a href="#">Follow Journey</a>
-    </section>
+      <p>Study, migration, and personal expansion into Europe.</p>
+      <a class="btn" href="#">Follow</a>
+    </div>
 
-  </main>
+  </section>
 
+  <section class="social">
+    <h3>Connect With Me</h3>
+    <p>
+      <a href="#">Instagram</a>
+      <a href="#">X (Twitter)</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">GitHub</a>
+    </p>
+  </section>
 
-  <!-- =========================
-       FOOTER / IDENTITY SIGNATURE
-  ========================== -->
-  <footer class="footer">
-    <p>© 2026 Nathan Teatim — MCXONIC Digital Ecosystem</p>
+  <footer>
+    © 2026 Nathan Teatim — MCXONIC Digital Ecosystem
   </footer>
 
 </body>
